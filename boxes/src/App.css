@@ -1,7 +1,14 @@
-.App {
-  text-align: center;
+p,
+h1,
+h2 {
+  color: whitesmoke;
 }
 
-p {
-  color: whitesmoke;
+.box {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  background-color: rgb(144, 6, 18);
+  margin: 0.5rem;
+  padding: 1rem;
 }
