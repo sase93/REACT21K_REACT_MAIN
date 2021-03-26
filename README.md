@@ -4,10 +4,9 @@ This repo is a collection of my various school tasks to do with React. It is mea
 
 ## Technologies used
 
-- React
+- JS (with React)
 - HTML
 - CSS
-- JS
 
 ## Authors and acknowledgment
 
