@@ -15,7 +15,7 @@ const Main = () => {
         <div>
             <Box name="First Guy" age="30" title="Boss"/>
             <Box name="First Gal" age="25" title="Manager"/>
-            <Box name="2nd Guy" age="20" title="Worker"/>
+            <Box name="Second Guy" age="20" title="Worker"/>
         </div>
     );
 };
