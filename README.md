@@ -1,1 +1,14 @@
-This is my folder for React projects in my schoolwork.
+# My React21K React tasks' repo
+
+This repo is a collection of my various school tasks to do with React. It is meant to be a location from which my progress in learning React can be viewed by my teachers.
+
+## Technologies used
+
+- JS (with React)
+- HTML
+- CSS
+
+## Authors and acknowledgment
+
+Samu Rahkila
+- GitHub @sase93
