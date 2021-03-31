@@ -27,7 +27,14 @@ class App extends Component {
   };
 
   render() {
-    let circleClass = `${this.state.counter === 0 ? "" : this.state.counter % 2 === 0 ? "even" : "odd"} circle`;
+    let circleClass;
+    if (this.state.counter === 0){
+      circleClass = "circle";
+    } else if (this.state.counter % 2 === 0){
+      circleClass = "even circle";
+    } else {
+      circleClass = "odd circle";
+    }
 
     return (
       <div>
