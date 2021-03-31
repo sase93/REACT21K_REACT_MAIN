@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Header from './Header';
+import Footer from './Footer';
 import "./App.css";
 
 class App extends Component {
@@ -27,6 +29,7 @@ class App extends Component {
   };
 
   render() {
+    // let circleClass = `${this.state.counter === 0 ? "" : this.state.counter % 2 === 0 ? "even" : "odd"} circle`;
     let circleClass;
     if (this.state.counter === 0){
       circleClass = "circle";
@@ -38,10 +41,14 @@ class App extends Component {
 
     return (
       <div>
+        <Header/>
         <h1 className={circleClass}>{this.state.counter}</h1>
-        <button onClick={this.increaseHandler}>+</button>
-        <button onClick={this.decreaseHandler}>-</button>
-        <button onClick={this.resetHandler}>0</button>
+        <div className="buttons">
+          <button onClick={this.increaseHandler}>+</button>
+          <button onClick={this.decreaseHandler}>-</button>
+          <button onClick={this.resetHandler}>0</button>
+        </div>
+        <Footer/>
       </div>
     );
   }

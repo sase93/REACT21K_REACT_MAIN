@@ -1,3 +1,7 @@
+h2 {
+  margin-left: 135px;
+}
+
 .circle {
   background-color: rgb(29, 86, 190);
   height: 100px;
@@ -6,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 150px;
 }
 
 .even {
@@ -14,4 +19,18 @@
 
 .odd {
   background-color: cyan;
+}
+
+.buttons {
+  margin-left: 135px;
+}
+
+button {
+  margin: 0px 6px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+footer {
+  margin-left: 130px;
 }
