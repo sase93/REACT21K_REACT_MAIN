@@ -7,3 +7,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.even {
+  background-color: crimson;
+}
+
+.odd {
+  background-color: cyan;
+}
