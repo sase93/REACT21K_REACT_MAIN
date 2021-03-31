@@ -1,6 +1,9 @@
-div > h1 {
-  max-height: 100px;
-  max-width: 100px;
-  background-color: cadetblue;
+.circle {
+  background-color: rgb(29, 86, 190);
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
