@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap");
+
+body {
+  font-family: "Londrina Solid", cursive;
+  background-image: linear-gradient(
+    to right top,
+    red,
+    rgb(255, 0, 98),
+    rgb(147, 0, 233)
+  );
+  background-attachment: fixed;
+  text-align: center;
+}
+
+button {
+  font-family: inherit;
+  padding: 1rem;
+  margin: 1rem;
+  background: white;
+  box-shadow: 0 0 5px #333;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
