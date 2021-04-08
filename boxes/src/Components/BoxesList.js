@@ -1,21 +1,7 @@
 import React, { Component } from "react";
+import Box from './BoxCard';
 
-const Box = (props) => {
-  function consoleLog() {
-    console.log('sup');
-  };
-
-  return (
-    <div className="box">
-      <h2>Name: {props.name}</h2>
-      <p>Position: {props.position}</p>
-      <p>Main attribute: {props.attribute}</p>
-      <button onClick={consoleLog}>Click me</button>
-    </div>
-  );
-};
-
-class Main extends Component {
+class BoxesList extends Component {
   state =  {
     persons : [
       {name: "Bristleback", position: 3, attribute: "STR"},
@@ -24,7 +10,7 @@ class Main extends Component {
     ]
   };
 
-  changeNames = () => {
+  handleClick = () => {
     this.setState({
       persons : [
         {name: "Centaur Warrunner", position: 3, attribute: "STR"},
@@ -37,7 +23,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-          <button onClick={this.changeNames}>CLICK ME!</button>
+          <button onClick={this.handleClick}>CLICK ME!</button>
           <Box name={this.state.persons[0].name} position={this.state.persons[0].position} attribute={this.state.persons[0].attribute}/>
           <Box name={this.state.persons[1].name} position={this.state.persons[1].position} attribute={this.state.persons[1].attribute}/>
           <Box name={this.state.persons[2].name} position={this.state.persons[2].position} attribute={this.state.persons[2].attribute}/>
@@ -46,4 +32,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default BoxesList;
