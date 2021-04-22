@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Circle from './Components/Circle';
 import './App.css';
+import GameOver from './Components/GameOver'
 
 const getRndInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -15,7 +16,8 @@ class App extends Component {
         {id: 4, color: "brown"}
     ],
     score: 0,
-    current: 0
+    current: 0,
+    showGameOver: false
   };
 
   timer = undefined;
@@ -51,11 +53,14 @@ class App extends Component {
   
   endHandler = () => {
     clearTimeout(this.timer);
+    this.setState({
+      showGameOver: true
+    });
   }
 
   render() {
     const circlesList = this.state.circles.map((c) => {
-      return <Circle id={c.id} key={c.id} color={c.color} click={() => this.clickHandler(c.id)}/>;
+      return <Circle id={c.id} key={c.id} color={c.color} click={() => this.clickHandler(c.id)} active={this.state.current === c.id}/>;
     });
 
     return (
@@ -67,6 +72,7 @@ class App extends Component {
         </div>
         <button onClick={this.startHandler}>Start</button>
         <button onClick={this.endHandler}>Stop</button>
+        {this.state.showGameOver && <GameOver score={this.state.score}/>}
       </div>
     );
   }

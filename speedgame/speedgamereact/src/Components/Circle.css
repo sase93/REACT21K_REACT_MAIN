@@ -23,3 +23,7 @@
 .brown {
   background-color: brown;
 }
+
+.active {
+  background-color: white;
+}
