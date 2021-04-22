@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Circle from './Components/Circle';
 import './App.css';
 
+const getRndInteger = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 class App extends Component {
   state = {
     circles: [
@@ -9,21 +13,60 @@ class App extends Component {
         {id: 2, color: "green"},
         {id: 3, color: "yellow"},
         {id: 4, color: "brown"}
-    ]
+    ],
+    score: 0,
+    current: 0
   };
 
+  timer = undefined;
+  speed = 2000;
+
+  clickHandler = (id) => {
+    console.log(id + " clicked!");
+    this.setState({
+      score: this.state.score + 1
+    });
+  }
+
+  nextTarget  = () => {
+    let nextActive = undefined;
+
+    do {
+      nextActive = getRndInteger(1,4);
+    } while (this.state.current === nextActive);
+
+    this.setState({
+      current: nextActive
+    });
+
+    this.speed *= 0.95;
+    this.timer = setTimeout(this.nextTarget, this.speed);
+
+    console.log("Active target is: " + this.state.current);
+  }
+
+  startHandler = () => {
+    this.nextTarget();
+  }
+  
+  endHandler = () => {
+    clearTimeout(this.timer);
+  }
+
   render() {
+    const circlesList = this.state.circles.map((c) => {
+      return <Circle id={c.id} key={c.id} color={c.color} click={() => this.clickHandler(c.id)}/>;
+    });
+
     return (
       <div>
         <h1>Speedgame</h1>
-        <p>Score: </p>
+        <p>Score: {this.state.score}</p>
         <div className="circles">
-          {this.state.circles.map((c) => {
-            return <Circle id={c.id} key={c.id} color={c.color}/>;
-          })}
+          {circlesList}
         </div>
-        <button>Start</button>
-        <button>Stop</button>
+        <button onClick={this.startHandler}>Start</button>
+        <button onClick={this.endHandler}>Stop</button>
       </div>
     );
   }
