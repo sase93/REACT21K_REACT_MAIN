@@ -25,5 +25,5 @@
 }
 
 .active {
-  background-color: white;
+  background-image: url("../assets/img/target.png");
 }

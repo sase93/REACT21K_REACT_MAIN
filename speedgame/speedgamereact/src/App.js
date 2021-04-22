@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import Circle from './Components/Circle';
 import './App.css';
 import GameOver from './Components/GameOver'
+import bgmusic from "./assets/sounds/speedgame.mp3";
+import endsound from "./assets/sounds/gameover.mp3";
+
+let startSound = new Audio(bgmusic);
+let endSound = new Audio(endsound);
 
 const getRndInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -68,6 +73,7 @@ class App extends Component {
     this.setState({
       gameStart: true
     });
+    startSound.play();
   }
   
   endHandler = () => {
@@ -75,6 +81,8 @@ class App extends Component {
     this.setState({
       showGameOver: true
     });
+    startSound.pause();
+    endSound.play();
   }
 
   render() {
