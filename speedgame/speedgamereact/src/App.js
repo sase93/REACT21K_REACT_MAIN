@@ -18,7 +18,8 @@ class App extends Component {
     score: 0,
     current: 0,
     rounds: 0,
-    showGameOver: false
+    showGameOver: false,
+    gameStart: false
   };
 
   timer = undefined;
@@ -64,6 +65,9 @@ class App extends Component {
 
   startHandler = () => {
     this.nextTarget();
+    this.setState({
+      gameStart: true
+    });
   }
   
   endHandler = () => {
@@ -75,7 +79,7 @@ class App extends Component {
 
   render() {
     const circlesList = this.state.circles.map((c) => {
-      return <Circle id={c.id} key={c.id} color={c.color} click={() => this.clickHandler(c.id)} active={this.state.current === c.id}/>;
+      return <Circle id={c.id} key={c.id} color={c.color} click={() => this.clickHandler(c.id)} active={this.state.current === c.id} disabled={this.state.gameStart}/>;
     });
 
     return (
@@ -85,7 +89,7 @@ class App extends Component {
         <div className="circles">
           {circlesList}
         </div>
-        <button onClick={this.startHandler}>Start</button>
+        <button onClick={this.startHandler} disabled={this.state.gameStart}>Start</button>
         <button onClick={this.endHandler}>Stop</button>
         {this.state.showGameOver && <GameOver score={this.state.score}/>}
       </div>
