@@ -25,6 +25,12 @@ class App extends Component {
 
   clickHandler = (id) => {
     console.log(id + " clicked!");
+
+    if (this.state.current !== id) {
+      this.endHandler();
+      return;
+    }
+
     this.setState({
       score: this.state.score + 1
     });
