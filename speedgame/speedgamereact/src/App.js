@@ -17,6 +17,7 @@ class App extends Component {
     ],
     score: 0,
     current: 0,
+    rounds: 0,
     showGameOver: false
   };
 
@@ -32,11 +33,17 @@ class App extends Component {
     }
 
     this.setState({
-      score: this.state.score + 1
+      score: this.state.score + 1,
+      rounds: 0
     });
   }
 
   nextTarget  = () => {
+    if (this.state.rounds >= 5) {
+      this.endHandler();
+      return;
+    }
+
     let nextActive = undefined;
 
     do {
@@ -44,8 +51,10 @@ class App extends Component {
     } while (this.state.current === nextActive);
 
     this.setState({
-      current: nextActive
+      current: nextActive,
+      rounds: this.state.rounds + 1
     });
+    console.log("Rounds: " + this.state.rounds);
 
     this.speed *= 0.95;
     this.timer = setTimeout(this.nextTarget, this.speed);
