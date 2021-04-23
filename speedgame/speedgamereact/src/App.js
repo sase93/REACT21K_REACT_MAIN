@@ -24,7 +24,8 @@ class App extends Component {
     current: 0,
     rounds: 0,
     showGameOver: false,
-    gameStart: false
+    gameStart: false,
+    clickedOnce: false
   };
 
   timer = undefined;
@@ -38,10 +39,15 @@ class App extends Component {
       return;
     }
 
-    this.setState({
-      score: this.state.score + 1,
-      rounds: 0
-    });
+    if (this.state.clickedOnce === false) {
+      this.setState({
+        score: this.state.score + 1,
+        rounds: 0,
+        clickedOnce: true
+      });
+    } else {
+      return;
+    }
   }
 
   nextTarget  = () => {
@@ -58,7 +64,8 @@ class App extends Component {
 
     this.setState({
       current: nextActive,
-      rounds: this.state.rounds + 1
+      rounds: this.state.rounds + 1,
+      clickedOnce: false
     });
     console.log("Rounds: " + this.state.rounds);
 
