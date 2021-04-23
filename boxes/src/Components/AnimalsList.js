@@ -30,7 +30,7 @@ class AnimalsList extends Component {
         const animalsList = animalFilter.map((animal) => {
             return <AnimalCard key={animal.name} name={animal.name}
             clickme={() => this.clickHandler(animal.name)}
-            // or: clickme={this.clickHandler.bind(this, animal.name)}
+            // or e.g.: clickme={this.clickHandler.bind(this, animal.name)}
             />;
         });
 
