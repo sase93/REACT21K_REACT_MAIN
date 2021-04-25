@@ -4,17 +4,18 @@ import './Form.css';
 const Form = (props) => {
     return (
         <div onChange={props.update}>
+            <form id="form">
                 <div>
                     <label htmlFor="firstname">First name</label>
-                    <input type="text" name="firstname" id="firstname" placeholder="First"/>
+                    <input type="text" name="firstname" id="firstname" placeholder="First" required/>
                 </div> 
                 <div>
                     <label htmlFor="lastname">Last name</label>
-                    <input type="text" name="lastname" id="lastname" placeholder="Last"/>
+                    <input type="text" name="lastname" id="lastname" placeholder="Last" required/>
                 </div> 
                 <div>
                     <label htmlFor="phone">Phone number</label>
-                    <input type="text" name="phone" id="phone" placeholder="1234567890"/>
+                    <input type="text" name="phone" id="phone" placeholder="1234567890" required/>
                 </div> 
                 <div>
                     <label htmlFor="role">Role</label>
@@ -26,8 +27,9 @@ const Form = (props) => {
                 </div> 
                 <div>
                     <label htmlFor="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="4" placeholder="Type your message here."/>
-                </div> 
+                    <textarea name="message" id="message" cols="30" rows="4" placeholder="Type your message here." required/>
+                </div>
+            </form>
                 <button onClick={props.submit}>Submit</button>
             </div>
     );

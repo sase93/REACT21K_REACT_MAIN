@@ -2,3 +2,8 @@
   background-color: rgb(222, 225, 231);
   padding-bottom: 6px;
 }
+
+p,
+h3 {
+  margin: 2vh;
+}

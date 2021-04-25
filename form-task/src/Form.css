@@ -1,3 +1,18 @@
 body {
   background-color: rgb(64, 105, 180);
 }
+
+input,
+select,
+textarea {
+  position: absolute;
+  left: 130px;
+}
+
+form > div {
+  margin: 2vh;
+}
+
+button {
+  margin-left: 2vh;
+}
