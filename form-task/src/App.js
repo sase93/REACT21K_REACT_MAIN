@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Form update={this.updateViewHandler}/>
+        <Form update={this.updateViewHandler} submit={this.showPopupHandler}/>
 
         {this.state.showPopup && <Popup 
         firstname={this.state.firstname}

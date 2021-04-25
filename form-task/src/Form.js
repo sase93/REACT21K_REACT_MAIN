@@ -28,6 +28,7 @@ const Form = (props) => {
                     <label htmlFor="message">Message</label>
                     <textarea name="message" id="message" cols="30" rows="4" placeholder="Type your message here."/>
                 </div> 
+                <button onClick={props.submit}>Submit</button>
             </div>
     );
 };
