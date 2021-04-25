@@ -5,11 +5,11 @@ import View from './View';
 
 class App extends Component {
   state = {
-    firstname : "First",
-    lastname : "Last",
-    phone : "0123456789",
+    firstname : "",
+    lastname : "",
+    phone : "",
     role : "Student",
-    message : "Message here."
+    message : ""
   }
 
   updateViewHandler = (event) => {
@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Form/>
+        <Form update={this.updateViewHandler}/>
         <View
         firstname={this.state.firstname}
         lastname={this.state.lastname}
