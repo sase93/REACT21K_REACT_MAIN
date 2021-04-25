@@ -1,17 +1,21 @@
 import React from 'react';
-import './View.css';
+import './Popup.css';
 
-const View = (props) => {
+const resetHandler = () => {
+    window.location.reload();
+}
+
+const Popup = (props) => {
     return (
-        <div className="results">
-            <h3>These are your inputs</h3>
+        <div className="popup">
             <p>First name: {props.firstname}</p>
             <p>Last name: {props.lastname}</p>
             <p>Phone number:{props.phone}</p>
             <p>Role: {props.role}</p>
             <p>Message: {props.message}</p>
+            <button onClick={resetHandler}>Reset</button>
         </div>
     );
 };
 
-export default View;
+export default Popup;

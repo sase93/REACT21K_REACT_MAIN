@@ -2,6 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import Form from './Form';
 import View from './View';
+import Popup from './Popup';
 
 class App extends Component {
   state = {
@@ -9,7 +10,8 @@ class App extends Component {
     lastname : "",
     phone : "",
     role : "Student",
-    message : ""
+    message : "",
+    showPopup : false
   }
 
   updateViewHandler = (event) => {
@@ -18,10 +20,24 @@ class App extends Component {
     });
   }
 
+  showPopupHandler = (event) => {
+    this.setState({
+      showPopup: true
+    });
+  }
+
   render() {
     return (
       <div>
         <Form update={this.updateViewHandler}/>
+
+        {this.state.showPopup && <Popup 
+        firstname={this.state.firstname}
+        lastname={this.state.lastname}
+        phone={this.state.phone}
+        role={this.state.role}
+        message={this.state.message}/>}
+
         <View
         firstname={this.state.firstname}
         lastname={this.state.lastname}
