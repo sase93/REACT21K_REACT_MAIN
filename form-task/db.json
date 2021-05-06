@@ -1,0 +1,28 @@
+{
+    "notes" : [
+        {
+            "id" : 1,
+            "firstname" : "Samu",
+            "lastname" : "Rahkila",
+            "phone" : "123456789",
+            "message" : "Hello from Finland!",
+            "role" : "Student"
+        },
+        {
+            "id" : 2,
+            "firstname" : "Marvin",
+            "lastname" : "Martian",
+            "phone" : "55550202",
+            "message" : "Hello from Mars!",
+            "role" : "Other"
+        },
+        {
+            "id" : 3,
+            "firstname" : "Kazuya",
+            "lastname" : "Mishima",
+            "phone" : "66600666",
+            "message" : "Hello from G-Corp!",
+            "role" : "Teacher"
+        }
+    ]
+}

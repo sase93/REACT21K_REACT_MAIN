@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Form from './Form';
 import View from './View';
 import Popup from './Popup';
+import NotesList from './NotesList';
 
 class App extends Component {
   state = {
@@ -11,7 +12,12 @@ class App extends Component {
     phone : "",
     role : "Student",
     message : "",
-    showPopup : false
+    showPopup : false,
+    notes: []
+  }
+
+  componentDidMount(){
+    fetch("http://localhost:3001/notes").then(res => res.json()).then(data => this.setState({notes: data}));
   }
 
   updateViewHandler = (event) => {
@@ -42,6 +48,8 @@ class App extends Component {
         {this.state.showPopup && <Popup {...props}/>}
 
         <View {...props}/>
+
+        <NotesList notes={this.state.notes} />
       </div>
     );
   }
