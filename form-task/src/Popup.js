@@ -5,7 +5,7 @@ const resetHandler = () => {
     window.location.reload();
 }
 
-const Popup = ({firstname, lastname, phone, role, message}) => {
+const Popup = ({firstname, lastname, phone, role, message, submit}) => {
     return (
         <div className="overlay">
             <div className="popup">
@@ -14,6 +14,7 @@ const Popup = ({firstname, lastname, phone, role, message}) => {
                 <p>Phone number: {phone}</p>
                 <p>Role: {role}</p>
                 <p>Message: {message}</p>
+                <button onClick={submit}>Send</button>
                 <button onClick={resetHandler}>Reset</button>
             </div>
         </div>
