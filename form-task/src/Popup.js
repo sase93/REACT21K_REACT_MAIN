@@ -5,15 +5,15 @@ const resetHandler = () => {
     window.location.reload();
 }
 
-const Popup = (props) => {
+const Popup = ({firstname, lastname, phone, role, message}) => {
     return (
         <div className="overlay">
             <div className="popup">
-                <p>First name: {props.firstname}</p>
-                <p>Last name: {props.lastname}</p>
-                <p>Phone number:{props.phone}</p>
-                <p>Role: {props.role}</p>
-                <p>Message: {props.message}</p>
+                <p>First name: {firstname}</p>
+                <p>Last name: {lastname}</p>
+                <p>Phone number: {phone}</p>
+                <p>Role: {role}</p>
+                <p>Message: {message}</p>
                 <button onClick={resetHandler}>Reset</button>
             </div>
         </div>

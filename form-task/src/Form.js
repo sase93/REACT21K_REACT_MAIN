@@ -1,9 +1,9 @@
 import React from 'react';
 import './Form.css';
 
-const Form = (props) => {
+const Form = ({update, submit}) => {
     return (
-        <div onChange={props.update}>
+        <div onChange={update}>
             <form id="form">
                 <div>
                     <label htmlFor="firstname">First name</label>
@@ -30,7 +30,7 @@ const Form = (props) => {
                     <textarea name="message" id="message" cols="30" rows="4" placeholder="Type your message here." required/>
                 </div>
             </form>
-                <button onClick={props.submit}>Submit</button>
+                <button onClick={submit}>Submit</button>
             </div>
     );
 };
